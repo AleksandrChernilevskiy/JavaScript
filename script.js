@@ -22,17 +22,17 @@ fetch(`https://api.github.com/users/${getNameFromUrl(urlUser)}`)
     body.append(avatar);
     let name = document.createElement('p');
     if(json.name != null) {
-      name.innerHtml = json.name;
+      name.innerHTML = json.name;
     } else {
-      name.innerHtml = 'Информация о пользователе куда то пропала=(';
+      name.innerHTML = 'Информация о пользователе куда то пропала=(';
     }
     body.append(name);
     name.addEventListener ("click", () => window.location = 'https://github.com/AzezAeksandrChernilevskiy');
     let bio = document.createElement('p');
     if(json.bio != null) {
-      bio.innerHtml = json.bio;
+      bio.innerHTML = json.bio;
     } else {
-      bio.innerHtml = 'Информация о пользователе куда то пропала=(';
+      bio.innerHTML = 'Информация о пользователе куда то пропала=(';
     }
     body.append(bio);
   })
