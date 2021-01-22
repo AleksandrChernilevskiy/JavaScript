@@ -9,10 +9,6 @@ body {
   justify-content: flex-start;
 }
 
-.hidden {
-  display: none !important;
-}
-
 .ldio-rt80uakkshr > div {
   transform-origin: 100px 100px;
   animation: ldio-rt80uakkshr 0.2s infinite linear;
@@ -71,3 +67,12 @@ body {
 }
 
 .ldio-rt80uakkshr div { box-sizing: content-box; }
+
+.hidden {
+  display: none !important;
+  width: 0;
+  height: 0;
+};
+#loader {
+  display: none;
+}

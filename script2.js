@@ -1,6 +1,11 @@
+
 window.setTimeout(function () {
+  const loader = document.getElementById("apploader");
+  const loaded = () => {
+    loader.classList.add('hidden');
+  };
+  setTimeout(loaded, 200);
   let body = document.body;
-  let loader = document.getElementById("loader");
   let string = window.location.search;
   let url = 'https://api.github.com/users/AzezAeksandrChernilevskiy';
   const date = new Date();
@@ -37,3 +42,4 @@ window.setTimeout(function () {
     })
   .catch(error => console.log('Информация о пользователе куда то пропала=('))
 }, 3000);
+  
