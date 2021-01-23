@@ -5,9 +5,10 @@ window.setTimeout(function () {
     loader.classList.add('hidden');
   };
   setTimeout(loaded, 200);
+  let name = 'AzezAeksandrChernilevskiy';
   let body = document.body;
   let string = window.location.search;
-  let url = 'https://api.github.com/users/AzezAeksandrChernilevskiy';
+  let url = `https://api.github.com/users/${name}`;
   const date = new Date();
   const getDate = new Promise((resolve, reject) => {
     setTimeout(() => date ? resolve(date.innerHTML) : reject("Ошибка"), 100)
