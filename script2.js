@@ -5,10 +5,17 @@ window.setTimeout(function () {
     loader.classList.add('hidden');
   };
   setTimeout(loaded, 200);
-  let name = 'AzezAeksandrChernilevskiy';
+  // let name = 'AzezAeksandrChernilevskiy';
   let body = document.body;
   let string = window.location.search;
-  let url = `https://api.github.com/users/${name}`;
+  const url = (string) => {
+    let urlUser = string.split('=');
+    let name = urlUser[1];
+    if( name == undefined ) {
+      name = 'AzezAeksandrChernilevskiy';
+    }
+    return name;
+  }
   const date = new Date();
   const getDate = new Promise((resolve, reject) => {
     setTimeout(() => date ? resolve(date.innerHTML) : reject("Ошибка"), 100)
@@ -18,7 +25,7 @@ window.setTimeout(function () {
   })
 
   Promise.all([getUrl, getDate])
-    .then(([url, date]) => fetch(url))
+    .then(([url, date]) => fetch(`https://api.github.com/users/${url(string)}`))
     .then(res => res.json())
     .then(json => {
       let avatar = new Image();
